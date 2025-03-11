@@ -2,120 +2,96 @@
     margin: 0;
     padding: 0;
     font-family: "Source Sans 3", sans-serif;
+    box-sizing: border-box;
 }
 
+/* Base styles */
 .hero{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #8EC5FC;
     background-image: linear-gradient(102deg, #45a2ff 0%, #E0C3FC 100%);   
+    padding: 20px;
 }
 
 .container{
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     text-align: center;
 }
 
 .name{
     margin-bottom: 20px;
-    font-size: 90px;
+    font-size: 4rem;
     color:#2949fd;
 }
 
 .description{
-    font-size: 25px;
+    font-size: 1.5rem;
     margin-bottom: 50px;
     color: #060c30;
 }
 
 .button{
     border: none;
-    font-size: 25px;
+    font-size: 1.5rem;
     text-decoration: none;
     color: black;
+    padding: 10px 20px;
+    display: inline-block;
 }
 
 .button:hover{
     background-color: rgb(54, 132, 250);
 }
 
-
-.resume{
+.resume, .skillset{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 40px 20px;
 }
 
-.parent{
+.parent, .parent2{
     display: grid;
-     grid-template-columns: 0.5fr 1fr;
-     grid-template-rows: repeat(1, 1fr);
-     margin: 0;
-     width: 80%;
-     row-gap: 2rem;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 1200px;
+    row-gap: 2rem;
     text-align: left;
 }
 
-.image{
+.image, .image2{
     display: grid;
     place-items: center;
-    height: 100%;
 }
 
-.image > img{
-    width: 200px;
-}
-
-
-.skillset{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.image > img, .image2 > img{
+    width: 150px;
+    max-width: 100%;
 }
 
 h3{
     color: #2e4dff;
     margin-bottom: 10px;
-    font-size:52px;
+    font-size: 2.5rem;
     font-family: "Source Sans 3", sans-serif;
 }
 
 ul{
     list-style: none;
-    font-size: 28px;
-}
-
-.parent2{
-    display: grid;
-     grid-template-columns: 0.5fr 1fr;
-     grid-template-rows: repeat(1, 1fr);
-     margin: 0;
-     width: 80%;
-     row-gap: 2rem;
-    text-align: left;
-}
-
-.image2{
-    display: grid;
-    place-items: center;
-}
-
-.image2 > img {
-    width: 200px;
+    font-size: 1.25rem;
 }
 
 .skls{
-    width: 800px;
+    width: 100%;
     border: 3px solid #92a2fc;
 }
 
@@ -127,48 +103,111 @@ ul{
     background-color: #92a2fc;
 }
 
+.skls > ul li {
+    padding: 8px;
+}
+
 .contact{
     width: 100%;
-    height: 30vh;
+    min-height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 p{
-    font-size: 24px;
+    font-size: 1.25rem;
     margin-bottom: 20px;
 }
 
 .parent3{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 10px;
-    width: 20%;
-    row-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
 }
 
 .link > img{
     height: 50px;
 }
 
-
 footer{
     width: 100%;
-    height: 30vh;
+    min-height: 30vh;
     background-color: #5770ff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    text-align: center;
 }
 
 footer > .quote{
-    font-size: 38px;
+    font-size: 2rem;
     color: #a7b4ff;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-style: normal;
     margin-bottom: 30px;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .parent, .parent2 {
+        grid-template-columns: 0.5fr 1fr;
+    }
+    
+    .name {
+        font-size: 5rem;
+    }
+    
+    .image > img, .image2 > img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .name {
+        font-size: 2.5rem;
+    }
+    
+    h3 {
+        font-size: 2rem;
+    }
+    
+    ul {
+        font-size: 1rem;
+    }
+    
+    .skls {
+        width: 100%;
+    }
+    
+    .edu_div {
+        padding: 0 15px;
+    }
+    
+    footer > .quote {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 2rem;
+    }
+    
+    .parent3 {
+        gap: 10px;
+    }
+    
+    .link > img {
+        height: 40px;
+    }
 }
